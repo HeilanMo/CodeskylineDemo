@@ -1,0 +1,13 @@
+{
+  "name": "codeskyline-logscope-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A deliberately small log-analysis project for a CodeSkyline live demonstration.",
+  "type": "module",
+  "scripts": {
+    "start": "node sample-logs/generate.mjs && node src/cli.js sample-logs/app.log --slowest",
+    "analyze": "node src/cli.js sample-logs/app.log --summary",
+    "test": "node --test",
+    "profile": "node sample-logs/generate.mjs && node --cpu-prof --cpu-prof-dir=.codeskyline/profiles src/cli.js sample-logs/app.log --slowest"
+  }
+}

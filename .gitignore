@@ -1,0 +1,23 @@
+node_modules/
+.codeskyline/
+*.cpuprofile
+*.heapprofile
+
+# Local VS Code settings
+.vscode/
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# Node.js and local tooling output
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.npm/
+coverage/
+dist/
+build/
+
+# Operating-system files
+.DS_Store
+Thumbs.db
