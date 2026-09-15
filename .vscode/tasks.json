@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Logscope: Generate sample logs",
+      "type": "shell",
+      "command": "node",
+      "args": [
+        "${workspaceFolder}/sample-logs/generate.mjs"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    }
+  ]
+}
