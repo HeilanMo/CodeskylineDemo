@@ -13,6 +13,7 @@ import { buildSearchIndex } from "./searchIndex.js";
 import { createTemporaryReport } from "./reportCache.js";
 import { normalizeDocuments } from "./documentNormalizer.js";
 import { generateAnalytics } from "./analyticsEngine.js";
+import { classifyCustomer, createAlert } from "./coverageFixtures.js";
 
 const logText = await readFile(new URL("../../sample-logs/app.log", import.meta.url), "utf8");
 const entries = parseLog(logText.split("\n").slice(0, 30).join("\n"));
@@ -69,10 +70,19 @@ function exerciseDocumentAnalytics() {
   console.log(generateAnalytics(normalized));
 }
 
+function exercisePartialCoverage() {
+  // The business path is covered. Trial, standard, and critical alert blocks
+  // stay reachable in the source but are intentionally not executed in this
+  // scenario, creating visible red lines in Debug: Coverage.
+  console.log(classifyCustomer({ segment: "business" }));
+  console.log(createAlert("warning"));
+}
+
 exerciseLogAnalysis();
 exerciseValidationBranches();
 exerciseAllocationHelpers();
 exerciseDocumentAnalytics();
+exercisePartialCoverage();
 console.log("Coverage demo complete. Keep the debugger running and take a coverage snapshot in CodeSkyline.");
 
 setInterval(() => {

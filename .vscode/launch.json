@@ -1,0 +1,173 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Logscope: Slow Requests",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/cli.js",
+      "args": [
+        "${workspaceFolder}/sample-logs/app.log",
+        "--slowest",
+        "--limit",
+        "10"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "preLaunchTask": "Logscope: Generate sample logs",
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "name": "Logscope: Summary",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/cli.js",
+      "args": [
+        "${workspaceFolder}/sample-logs/app.log",
+        "--summary"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "preLaunchTask": "Logscope: Generate sample logs",
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "name": "Logscope: CPU Profile",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/cli.js",
+      "args": [
+        "${workspaceFolder}/sample-logs/app.log",
+        "--slowest",
+        "--limit",
+        "10"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "preLaunchTask": "Logscope: Generate sample logs",
+      "runtimeArgs": [
+        "--cpu-prof",
+        "--cpu-prof-dir=${workspaceFolder}/.codeskyline/profiles"
+      ],
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "name": "Logscope: Exception Demo",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/debug/exceptionDemo.js",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "stopOnEntry": false,
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "name": "Logscope: Heap Allocation Demo",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/debug/heapDemo.js",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "name": "Logscope: CPU Hotspots Demo",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/debug/cpuDemo.js",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "name": "Logscope: CPU Comparison Run 1 (Baseline)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/debug/cpuCompareDemo.js",
+      "args": [
+        "run1"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "name": "Logscope: CPU Comparison Run 2 (Current)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/debug/cpuCompareDemo.js",
+      "args": [
+        "run2"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "name": "Logscope: Coverage Demo",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/debug/coverageDemo.js",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "name": "Logscope: Coverage Comparison Run 1 (Baseline)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/debug/coverageCompareDemo.js",
+      "args": [
+        "run1"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "name": "Logscope: Coverage Comparison Run 2 (Current)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/debug/coverageCompareDemo.js",
+      "args": [
+        "run2"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "name": "Logscope: Execution Heatmap Demo",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/debug/executionDemo.js",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    }
+  ]
+}
